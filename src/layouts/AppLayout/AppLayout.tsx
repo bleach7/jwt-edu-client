@@ -1,16 +1,16 @@
 import { Navbar } from "@/components";
-import { Container } from "@mui/material";
+import { Box, Container } from "@mui/material";
 import { Outlet } from "react-router-dom";
 
 export const AppLayout = () => {
   return (
     <>
       <Navbar />
-      <main className="flex-auto">
+      <Box component="main" className="flex-auto" sx={{ pb: "100px" }}>
         <Container maxWidth="sm">
           <Outlet />
         </Container>
-      </main>
+      </Box>
     </>
   );
 };

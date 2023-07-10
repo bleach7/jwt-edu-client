@@ -10,12 +10,7 @@ import { NavLink } from "react-router-dom";
 
 export const Navbar = () => {
   return (
-    <AppBar
-      position="static"
-      sx={{
-        backgroundColor: "grey.900",
-      }}
-    >
+    <AppBar position="static">
       <Container maxWidth="md">
         <Toolbar
           sx={{
