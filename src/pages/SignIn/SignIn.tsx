@@ -1,10 +1,10 @@
 import { usePageTitle } from "@/hooks";
+import { userFormSchema } from "@/schemas";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { LoadingButton } from "@mui/lab";
 import { Box, TextField, Typography } from "@mui/material";
 import { useForm } from "react-hook-form";
 import { ISignInSubmitData } from "./SignIn.interface";
-import { signInSchema } from "./SignIn.schema";
 
 export const SignIn = () => {
   usePageTitle("Sign In");
@@ -14,7 +14,7 @@ export const SignIn = () => {
     handleSubmit,
     formState: { errors },
   } = useForm<ISignInSubmitData>({
-    resolver: yupResolver(signInSchema),
+    resolver: yupResolver(userFormSchema),
   });
 
   const onSubmit = (data: ISignInSubmitData) => {
