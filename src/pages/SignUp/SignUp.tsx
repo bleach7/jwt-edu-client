@@ -12,13 +12,20 @@ export const SignUp = () => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm<ISignUpSubmitData>({
     resolver: yupResolver(userFormSchema),
+    defaultValues: {
+      email: "",
+      password: "",
+    },
   });
 
   const onSubmit = (data: ISignUpSubmitData) => {
     console.table(data);
+
+    reset();
   };
 
   return (
